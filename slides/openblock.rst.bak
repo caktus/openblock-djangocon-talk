@@ -1,0 +1,657 @@
+=========
+OpenBlock
+=========
+
+-----------------------------
+Overview & Initial Experience
+-----------------------------
+
+Karen Tracey, Colin Copeland
+
+----
+
+Talk Outline
+============
+
+- What it is?
+- Our experience with it
+- Extensions inspired by our experience
+- Future
+
+----
+
+Introduction
+============
+
+
+----
+
+
+What is OpenBlock?
+------------------
+
+- "Hyper-local news" application framework
+
+- Example news types
+
+  - police incident reports
+  - property transactions
+  - restaurant inspections
+  - business registrations
+
+- Open source project
+
+  - Web site: http://openblockproject.org/
+  - Code: https://github.com/openplans/openblock
+  - Mailing list: http://groups.google.com/group/ebcode/
+
+----
+
+What Kinds of Sites Might Use OpenBlock?
+----------------------------------------
+
+- Sites with a local focus,
+- which can benefit from automated news item generation,
+- where news item sources already exist online,
+- in some user-unfriendly, but regular, fashion
+
+----
+
+OpenBlock History
+=================
+
+Presenter Notes
+---------------
+
+- Let's take a moment to learn where OpenBlock came from
+
+----
+
+EveryBlock.com
+--------------
+
+.. http://www.holovaty.com/writing/knight-foundation-grant/
+.. http://www.knightfoundation.org/grants/20060885/
+
+.. image:: ../static/everyblock-logo.jpg
+    :align: center
+
+- Adrian Holovaty founded a web startup, EveryBlock, with a team of six
+- **March 2007:** Recieved $1,100,000 through a Knight News Challenge program grant
+- **Jan. 2008:** Site launch with Chicago, New York, San Francisco
+- **June 2008:** Charlotte and Philadelphia added
+- **Aug. 2009:** Acquired by MSNBC
+- Today in 16 cities, 3 more coming soon
+
+Presenter Notes
+---------------
+
+* EveryBlock was originally funded by a two-year grant from the Knight Foundation through its Knight News Challenge program.
+
+----
+
+EveryBlock.com
+--------------
+
+.. image:: ../static/example-everyblock.png
+    :width: 100%
+
+Presenter Notes
+---------------
+
+- Browse by neighborhoods, streets, zipcodes, or draw your own location
+- Lots of public record information as well as community neighbor content
+- Lots of community activity, especially in Chicago
+
+----
+
+EveryBlock Source Code
+----------------------
+
+.. http://blog.everyblock.com/2009/jun/30/source/
+
+- **July 2009:** the EveryBlock team open sourced core functionality on Google Code
+- 7 tarballs available at http://code.google.com/p/ebcode/
+- And then what happened?
+
+Presenter Notes
+---------------
+
+- Great codebase, lots of potential, but no community around the code yet
+- Hard to configure project requirements
+- Code was fairly complex, hard for beginners to jump into the project
+
+----
+
+OpenBlock
+---------
+
+.. http://www.knightfoundation.org/press-room/press-release/knight-foundation-expands-neighborhood-news/
+
+.. image:: ../static/openblock-logo.png
+    :align: center
+
+- **June 2010:** Knight Foundation launches $450,000 OpenBlock Initiative
+
+- **$235,000 - OpenPlans:** streamline and extend OpenBlock over 2 years
+- **$90,500 - The Columbia Daily Tribune:** install, test, and add new features in the context of a smaller newspaper
+- **$133,125 - The Boston Globe:** install, test, and add new features in the context of a larger newspaper
+
+Presenter Notes
+---------------
+
+ - Goal is to simplify and accelerate adoption of the open sourced EveryBlock code
+
+----
+
+OpenBlock Today
+---------------
+
+.. image:: ../static/openblock-logo.png
+    :align: center
+
+- Easier to install and setup
+- Consolidated codebase into 4 core modules
+    - `ebdata`
+    - `ebpub`
+    - `obadmin`
+    - `obdemo`
+- Current (v1.2) and previous versions are installable via PyPI
+
+- **Code:** https://github.com/openplans/openblock
+- **Demo site:** http://demo.openblockproject.org/
+- **Documentation:** http://openblockproject.org/docs/
+
+Presenter Notes
+---------------
+
+- Let's look at some OpenBlock sites...
+
+----
+
+OpenBlock Demo: Boston
+----------------------
+
+.. image:: ../static/example-boston.png
+    :width: 100%
+
+Presenter Notes
+---------------
+
+- Flagship demo for OpenBlock in Boston, MA
+- Ideal example for OpenBlock (large city, similar to EveryBlock)
+- Very recent data, including restaurant inspections and police reports
+- Lacks community aspect
+
+----
+
+openCampus Kent
+---------------
+
+.. image:: ../static/example-kent.png
+    :width: 100%
+
+Presenter Notes
+---------------
+
+- Kent State University in Ohio
+- Simple site only using a few OpenBlock views (no detail views)
+- Crime reports
+- News feed from campus newspaper
+- Reviews from Yelp
+
+----
+
+LarryvilleKU
+------------
+
+.. image:: ../static/example-larryvilleku.png
+    :width: 100%
+
+Presenter Notes
+---------------
+
+- University of Kansas
+- More robust, with responsive design
+- Twitter integration
+- Some stale data (more of a general OpenBlock problem)
+
+----
+
+OpenBlock Architecture
+----------------------
+
+- Data Model
+- Geocoder
+- Scrapers
+- Web UI
+
+----
+
+Data Model
+----------
+
+.. http://openblockproject.org/docs/packages/ebpub.streets.html#module-ebpub.streets.models
+
+* Places, Locations
+* Blocks, Streets, Intersections
+
+----
+
+Example City Streets
+--------------------
+
+.. image:: ../static/data-model-city.png
+    :width: 100 %
+
+.. Places? Locations?
+
+----
+
+Sreet Model
+------------
+
+.. image:: ../static/data-model-street.png
+    :width: 100 %
+
+----
+
+Block Model
+------------
+
+.. image:: ../static/data-model-block.png
+    :width: 100 %
+
+----
+
+OpenRural
+=========
+
+Presenter Notes
+---------------
+
+- Rural news organizations often struggle to move into the digital age because they lack the staff to make public data digestible.
+- OpenRural will work with rural governments and community newspapers in North Carolina to collect, aggregate and publish government data.
+
+----
+
+OpenRural
+---------
+
+.. http://www.knightfoundation.org/grants/20110150/
+
+.. image:: ../static/unc.png
+    :width: 60%
+    :align: center
+
+- **June 2011:** OpenRural funded by a three-year $275,000 grant from the Knight Foundation through the Knight News Challenge program.
+- Ryan Thornburg, professor at School of Journalism and Mass Communication at UNC
+- Caktus is helping develop and deploy OpenRural to North Carolina communities
+
+Presenter Notes
+---------------
+
+- Goals:
+    - Apply same OpenBlock tools to rural North Carolina communities
+    - Increase access to local information
+    - Do this by helping local newspapers leverage OpenBlock
+    - "Help Rural Newspapers Get Access to Public Data"
+
+----
+
+Columbus County, North Carolina
+-------------------------------
+
+.. image:: ../static/nc-columbus-county.png
+    :width: 100%
+
+Presenter Notes
+---------------
+
+- Our initial focus is on Columbus County, NC
+- Small county in the south east part of the state with 50k residents
+- Working with a local newspaper to incorporate public records onto their site
+
+----
+
+The News Reporter
+-----------------
+
+.. image:: ../static/whiteville-com.png
+    :width: 100%
+
+Presenter Notes
+---------------
+
+- The online version of the paper serving Whiteville and Columbus County
+
+----
+
+The News Reporter: Public Records
+---------------------------------
+
+- **Corporation Filings:** scraped from the NC Secretary of State website
+- **Restaurant Inspections:** scraped from large Crystal Report exports from the NC Department of Health and Human Services
+- **Property Transactions:** scraped from the Columbus County Tax and GIS offices
+- **Geocoded News Articles:** scraped from whiteville.com
+
+Presenter Notes
+---------------
+
+- Working with newspaper and government staff to scrape and collect online data
+- Local staff has been very helpful
+
+----
+
+The News Reporter: Public Records
+---------------------------------
+
+.. image:: ../static/whiteville-com-openrural.png
+    :width: 100%
+
+Presenter Notes
+---------------
+
+- Plan to launch production environment by Nov. 1, 2012
+
+----
+
+OpenRural Stack
+---------------
+
+- Automated ``fabric`` server provisioning and deployment. Testable with ``vagrant``.
+- Using Celery and RabbitMQ for ansyncrhonous tasks (scrapers and maintenance tasks)
+- Modified fork for OpenBlock that includes ``staticfiles`` changes.
+- Production runs nginx and gunicorn on a small Amazon EC2 instance.
+- Most issues fixed on OpenBlock core are pushed back to the official repository
+
+- Everything is completly open source
+- https://github.com/openrural
+
+Presenter Notes
+---------------
+
+- Local development instructions are included
+
+----
+
+.. common problems: stale data, no community aspect
+
+Experiences
+===========
+
+----
+
+Columbus County, NC
+-------------------
+
+.. image:: ../static/columbus-county-map.png
+    :width: 100 %
+
+----
+
+Columbus County, NC v2
+----------------------
+
+.. optional version of the county with cities
+.. think this helps at all?
+
+.. image:: ../static/nc-columbus-county-cities.png
+    :width: 100%
+
+----
+
+Challenging Characteristics of Columbus County
+----------------------------------------------
+
+- Multiple "cities"
+
+  - Supported by OpenBlock, but not "default"
+  - Different urlpatterns single- vs. multi-city
+  - Multi-city urlpatterns include "city slug"
+
+- Unincorporated areas
+
+  - Lots of space not in any town/city
+  - These places need names to be navigable
+  - Can use census "county subdivision" names
+  - ...but these are not meaningful to residents
+
+----
+
+1st Approach: Use Census Files for OpenBlock Data
+-------------------------------------------------
+
+- Advantages
+
+  - Code already exists in OpenBlock to use these files
+  - Generalizable to other NC counties
+
+- Disadvantages
+
+  - Incomplete/incorrect data
+  - 70% success rate geocoding ~38,000 Columbus County addresses
+
+----
+
+Missing Addresses
+-----------------
+
+.. image:: ../static/bad-data-missing-addresses.png
+    :width: 100 %
+
+----
+
+Discontiguous Blocks
+--------------------
+
+.. image:: ../static/bad-data-discontiguous.png
+    :width: 100 %
+
+----
+
+Multi City
+--------------------
+
+.. image:: ../static/geocoder-multi-city.png
+    :width: 100 %
+
+----
+
+2nd Approach: Use County GIS Department Data
+--------------------------------------------
+
+- Advantages
+
+  - More complete/accurate
+  - ~38,000 address geocode success rate improved to 93%
+
+- Disadvantages
+
+  - Custom code to load this data (custom BlockImporter)
+  - Not generalizable to other counties
+  - This data not available for all counties
+
+----
+
+Custom Data Availability in NC
+------------------------------
+
+.. image:: ../static/Street_Centerline_Download_County.jpg
+    :width: 90 %
+
+----
+
+Geocoding is Still Difficult
+----------------------------
+
+- Geocoding is a hard problem to solve
+- String parsing
+- Places and locations
+- Street/block data
+- 3rd-party geocoder comparison
+
+----
+
+Scrapers
+========
+
+----
+
+What are they?
+--------------
+
+Scripts that extract information from online data sources
+
+The process is conceptually simple:
+
+- The script should download some data from the web
+- Create one or more NewsItems whose fields are populated with that data
+- Save the NewsItem to the database
+
+The grunt work is in extracting the data you need.
+
+----
+
+How They Work
+-------------
+
+Scrapers can extract information from websites or tabular data (CSV, etc.)
+
+Common patterns:
+
+- A "list-detail site"
+    - Site that displays a list of records, which might be paginated
+    - Each record might have its own page -- a "detail" page
+    - ``mechanize`` to scrape the pages
+    - ``NewsItemListDetailScraper``, ``RssListDetailScraper``
+- Scrapers sometimes require more than a single data source
+    - CSV/Excel
+    - Shapefile
+    - Download multiple files and stitch them together locally
+
+----
+
+ScraperWiki
+===========
+
+----
+
+Property Transactions Scraper
+-----------------------------
+
+.. image:: ../static/scrapers-property.png
+    :width: 80 %
+    :align: center
+
+----
+
+Adding OpenBlock to an Existing Site
+------------------------------------
+
+- Out-of-the-box views/templates
+- Our experience integrating with local online newspapers
+- Our OpenRural deployment setup
+
+----
+
+
+Extensions
+==========
+
+Presenter Notes
+---------------
+
+OpenBlock handles scraping and public viewing, but is missing review and analysis
+
+----
+
+The Missing Piece: Data Review and Analysis
+-------------------------------------------
+
+- How successful was the geocoder?
+- How many news items were added?
+- Why is my scraper failing to run?
+- Why did this address fail to geocode? How can I correct it?
+
+----
+
+Data Dashboard
+==============
+
+----
+
+Data Dashboard
+--------------
+
+.. image:: ../static/datadashboard-runs.png
+    :width: 100 %
+
+Presenter Notes
+---------------
+
+- Keeps track of each run for every scraper, including execution time and status
+- Filter on status to only see important runs (scraper freq, lots of skips)
+- Manually initiate scraper run and delete all news items associated to the scraper
+
+----
+
+Data Dashboard
+--------------
+
+.. image:: ../static/datadashboard-stats.png
+    :width: 100 %
+
+Presenter Notes
+---------------
+
+- High level statistics for each run
+- Includes geocoding exceptions
+- Support for custom counters
+- Option field to record comments
+
+----
+
+Data Dashboard
+--------------
+
+.. image:: ../static/datadashboard-failures.png
+    :width: 100 %
+
+Presenter Notes
+---------------
+
+- Detailed list of failures
+- Figuring out why these failed requires some digging
+
+----
+
+Data Dashboard
+--------------
+
+.. code-block:: python
+    :emphasize-lines: 4
+
+    from openrural.data_dashboard.scrapers import DashboardMixin
+    from openrural.retrieval.base.scraperwiki import ScraperWikiScraper
+
+    class CorporationsScraper(DashboardMixin, ScraperWikiScraper):
+
+        # scraper settings
+        logname = 'corporations'
+        schema_slugs = ('corporations',)
+
+Presenter Notes
+---------------
+
+- Simple Mix-in class to use Data Dashboard
+- Handles all stats and metrics by default, but you can add more
+
+----
+
+Conclusion
+----------
+
+- State of the OpenBlock community
+- Our plans in North Carolina
+
