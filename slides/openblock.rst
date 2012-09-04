@@ -771,15 +771,11 @@ OpenBlock Community
 - OpenBlock needs an organic online community to survive
 - If you're interested in OpenBlock, come speak to us!
 
-Presenter Notes
----------------
-
-- Test
-
 ----
 
-The End
--------
+Questions?
+----------
 
+- **Slides:** http://caktus.github.com/openblock-djangocon-talk
 - Karen Tracey - @km_tracey
 - Colin Copeland - @copelco
